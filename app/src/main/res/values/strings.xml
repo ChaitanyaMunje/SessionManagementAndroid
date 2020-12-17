@@ -1,0 +1,12 @@
+<resources>
+    <!--app name-->
+    <string name="app_name">Session Management</string>
+    <!--string for login button-->
+    <string name="login">Login</string>
+    <!--string for edittext hint in password-->
+    <string name="enter_password">Enter password</string>
+    <!--string for edittext hint in email-->
+    <string name="enter_youe_email">Enter your Email</string>
+    <!--string for logout button-->
+    <string name="logout">Logout</string>
+</resources>
