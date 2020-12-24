@@ -5,12 +5,23 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_centerInParent="true"
-    android:text="Custom Chrome Tabs"
-    android:id="@+id/idBtnCustomChromeTab"
-    />
+    <!--Button for generating the PDF file-->
+    <Button
+        android:id="@+id/idBtnGeneratePDF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Generate PDF" />
+
+
+    <!--Button for opening our PDF file-->
+    <Button
+        android:id="@+id/idBtnViewPDF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idBtnGeneratePDF"
+        android:layout_centerInParent="true"
+        android:text="View PDF " />
+
 
 </RelativeLayout>
