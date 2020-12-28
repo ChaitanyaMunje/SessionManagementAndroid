@@ -32,7 +32,7 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 public class MainActivity extends AppCompatActivity {
 
     //variables for our buttons.
-    Button viewPDFbtn, generatePDFbtn;
+    Button  generatePDFbtn;
     //declaring width and height for our PDF file.
     int pageHeight = 1120;
     int pagewidth = 792;
@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //initializing our variables.
-        viewPDFbtn = findViewById(R.id.idBtnViewPDF);
         generatePDFbtn = findViewById(R.id.idBtnGeneratePDF);
         bmp = BitmapFactory.decodeResource(getResources(), R.drawable.gfgimage);
         scaledbmp = Bitmap.createScaledBitmap(bmp, 140, 140, false);
@@ -59,15 +58,6 @@ public class MainActivity extends AppCompatActivity {
             requestPermission();
         }
 
-        //setting onclick listner for our button.
-        viewPDFbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //caling method to view our generated PDF file.
-                viewPDF();
-            }
-        });
-
         generatePDFbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,29 +65,6 @@ public class MainActivity extends AppCompatActivity {
                 generatePDF();
             }
         });
-
-
-    }
-
-    private void viewPDF() {
-        //below line is for creating a variable for file which we have to open on button click.
-        File file = new File(Environment.getExternalStorageDirectory(), "GFG.pdf");
-        //after creating a variable for file we are opening that file via an intent to view.
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        //below line is used to set uri for a file which we have to open.
-        intent.setDataAndType(Uri.fromFile(file), "application/pdf");
-        //below line is for setting no flags to our activity.
-        intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-        //intent 1 is used for selecting a chooser with which we have to open our file.
-        Intent intent1 = Intent.createChooser(intent, "Open With");
-        try {
-            //we are passing startActivity to open our file.
-            startActivity(intent1);
-        } catch (ActivityNotFoundException e) {
-            //handling error case if file isnot found.
-            e.printStackTrace();
-            // Instruct the user to install a PDF reader here, or something
-        }
 
 
     }

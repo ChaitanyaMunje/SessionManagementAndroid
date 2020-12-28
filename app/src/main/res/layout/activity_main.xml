@@ -14,14 +14,4 @@
         android:text="Generate PDF" />
 
 
-    <!--Button for opening our PDF file-->
-    <Button
-        android:id="@+id/idBtnViewPDF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/idBtnGeneratePDF"
-        android:layout_centerInParent="true"
-        android:text="View PDF " />
-
-
 </RelativeLayout>
